@@ -49,10 +49,6 @@ class MainActivity : ComponentActivity() {
         val wg = inputs["Wг"]?.toDoubleOrNull() ?: .0
         val ag = inputs["Aг"]?.toDoubleOrNull() ?: .0
         val qidaf = 40.4
-        if (abs(hg + cg + sg + og - 100) > delta) {
-            calculationResult = "Помилка введення\nHг + Cг + Sг + Oг повинне дорівнювати 100"
-            return
-        }
 
         val cr = cg*(100 - wg - ag)/100
         val hr = hg*(100 - wg - ag)/100
