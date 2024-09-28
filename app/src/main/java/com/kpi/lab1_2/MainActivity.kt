@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
         val vg = inputs["Vг"]?.toDoubleOrNull() ?: .0
         val wg = inputs["Wг"]?.toDoubleOrNull() ?: .0
         val ag = inputs["Aг"]?.toDoubleOrNull() ?: .0
-        val qidaf = inputs["Qidaf"]?.toDoubleOrNull() ?: .0
+        val qidaf = 40.4
         if (abs(hg + cg + sg + og - 100) > delta) {
             calculationResult = "Помилка введення\nHг + Cг + Sг + Oг повинне дорівнювати 100"
             return
@@ -95,8 +95,7 @@ fun InputsScreen(
                 "Oг" to "%",
                 "Vг" to "мг/кг",
                 "Wг" to "%",
-                "Aг" to "%",
-                "Qidaf" to "МДж/кг",
+                "Aг" to "%"
             ).forEach { (inputName, units) ->
                 Input(
                     label = inputName,
